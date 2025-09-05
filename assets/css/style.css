@@ -1,6 +1,27 @@
 html, body {
-  overflow-x: hidden;
+  height: 100%;
 }
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1 0 auto;
+}
+footer {
+  flex-shrink: 0;
+  width: 100%;
+  background: #181818;
+  color: #fff;
+  text-align: center;
+  padding: 1.2rem 0 0.7rem 0;
+  font-size: 1rem;
+  margin-top: auto;
+  border-radius: 0 0 18px 18px;
+  box-shadow: 0 -2px 12px #000a;
+}
+
 /* ========== GALERÍA BOTONES Y VER TODO ========== */
 .galeria-botones-ver {
   display: flex;
@@ -16,6 +37,8 @@ html, body {
 /* ========== GALERÍA MOSAICO ========== */
 .galeria-mosaico {
   padding: 3rem 0;
+  margin-top: 140px;
+
 }
 .mosaico-grid {
   display: grid;
@@ -183,7 +206,7 @@ main {
   display: flex;
   align-items: center;
   padding: 1rem 2rem;
-  background: rgba(10, 10, 10, 0.055);
+  background: rgb(0, 0, 0);
   position: fixed;
   top: 0;
   width: 100%;
@@ -237,7 +260,7 @@ main {
 
 @media (max-width: 900px) {
   .navbar ul {
-    display: none;
+    display: flex;
     position: fixed;
     top: 0;
     right: -100vw;
@@ -250,11 +273,14 @@ main {
     gap: 2rem;
     align-items: flex-start;
     padding: 6rem 2rem 0 2rem;
-    transition: right 0.3s;
+    transition: right 0.7s cubic-bezier(.77,0,.18,1.1), opacity 0.5s;
+    opacity: 0;
+    pointer-events: none;
   }
   .navbar ul.active {
-    display: flex !important;
     right: 0;
+    opacity: 1;
+    pointer-events: auto;
   }
   .hamburger {
     display: flex;
@@ -319,6 +345,7 @@ main {
   border: none;
   border-radius: 24px;
   font-size: 1.1rem;
+  text-align: center;
   font-weight: bold;
   cursor: pointer;
   transition: background 0.2s, transform 0.2s;
@@ -330,7 +357,14 @@ main {
 }
 
 /* ========== SECCIONES ========== */
-#miembros h2 {
+section {
+  background: #181818;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px #f560928e;
+  margin-bottom: 2rem;
+  padding: 4rem 2rem;
+}
+section h2 {
   text-align: center;
   margin-bottom: 1rem;
   font-size: 2.5rem;
@@ -352,6 +386,7 @@ main {
   gap: 2rem;
   padding: 2rem;
   justify-items: center;
+  margin-top: 140px;
 }
 .miembros-grid .miembro-card {
   width: 180px;
