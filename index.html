@@ -1,36 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Peña Insolentes</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peña Insolentes</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
     <!-- Navbar clásico -->
     <header class="navbar">
         <div class="logo">
-        <a href="#inicio">
-            <img src="assets/img/pistolas.svg" alt="Logo Peña Insolentes">
-        </a>
+            <a href="#inicio">
+                <img src="assets/img/pistolas.svg" alt="Logo Peña Insolentes">
+            </a>
         </div>
 
         <button class="hamburger" id="hamburger" aria-label="Abrir menú">
-        <span></span>
-        <span></span>
-        <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
         </button>
 
         <nav id="nav-menu">
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#miembros">Miembros</a></li>
-            <li><a href="#galeria">Galería</a></li>
-            <li><a href="#ruleta">Ruleta</a></li>
-            <li><a href="#muro">Muro</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#miembros">Miembros</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#ruleta">Ruleta</a></li>
+                <li><a href="#muro">Muro</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -73,7 +74,7 @@
             <h2>Miembros</h2>
             <div class="miembros-contenedor">
                 <div class="miembros-scroll">
-                <!-- Tarjetas de miembros generadas por JS -->
+                    <!-- Tarjetas de miembros generadas por JS -->
                 </div>
                 <button id="ver-todos-miembros" class="btn">Ver más</button>
             </div>
@@ -81,56 +82,54 @@
 
         <section id="galeria">
             <h2>Galería</h2>
-        <div class="galeria-principal">
-            <div class="galeria-carrusel">
+            <div class="galeria-principal">
+                <div class="galeria-carrusel">
                     <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
                         class="galeria-img" alt="Foto 1">
                     <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80"
                         class="galeria-img" alt="Foto 2">
                     <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80"
                         class="galeria-img" alt="Foto 3">
+                </div>
+                <div id="galeria-modal" class="galeria-modal">
+                    <span class="galeria-modal-cerrar">&times;</span>
+                    <img id="galeria-modal-img" src="" alt="Imagen ampliada">
+                </div>
             </div>
-            <div id="galeria-modal" class="galeria-modal">
-                <span class="galeria-modal-cerrar">&times;</span>
-                <img id="galeria-modal-img" src="" alt="Imagen ampliada">
-            </div>
-        </div>
-        <div class="galeria-botones-ver">
-            <div class="galeria-botones">
-                <button class="galeria-btn" data-img="0">1</button>
-                <button class="galeria-btn" data-img="1">2</button>
-                <button class="galeria-btn" data-img="2">3</button>
-            </div>
-            <div class="galeria-ver-todo">
-                <a href="galeria.html" class="btn">Ver galería completa</a>
-            </div>
-        </div>
-        </section>
-
-        <section id="ruleta">
-            <h2>Ruleta de Retos</h2>
-            <div id="ruleta-container">
-                <div id="reto-actual"></div>
-                <button onclick="girarRuleta()">🎰 Girar</button>
-                <p id="resultado"></p>
+            <div class="galeria-botones-ver">
+                <div class="galeria-botones">
+                    <button class="galeria-btn" data-img="0">1</button>
+                    <button class="galeria-btn" data-img="1">2</button>
+                    <button class="galeria-btn" data-img="2">3</button>
+                </div>
+                <div class="galeria-ver-todo">
+                    <a href="galeria.html" class="btn">Ver galería completa</a>
+                </div>
             </div>
         </section>
 
         <section id="muro">
             <h2>Muro de Comentarios</h2>
-
-            <form id="form-comentario">
-                <input type="text" id="nombre" placeholder="Apodo (opcional)">
-                <textarea id="comentario" placeholder="Escribe tu mensaje..." required></textarea>
-                <button type="submit">Enviar</button>
-            </form>
-
-            <div id="comentarios"></div>
-        </section>
-
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <p>Email: insolentes@pena.com</p>
+            <div class="muro-flex">
+                <div class="muro-info">
+                    <h3>¿Qué es el Muro?</h3>
+                    <p>Deja tu comentario, saludo, firma o anécdota para la Peña Insolentes. ¡Participa y hazte notar!
+                        Puedes usar tu apodo o dejarlo anónimo. Los mensajes se mostrarán <a href="./muro.html">aquí</a>
+                        para todos los miembros y visitantes.</p>
+                    <img src="assets/img/logo.png" alt="Logo Insolentes" class="muro-img-explicativa"
+                        style="max-width:180px;margin-top:1.5rem;">
+                </div>
+                <div class="muro-form">
+                    <form id="form-comentario">
+                        <input type="text" id="nombre" placeholder="Apodo (opcional)">
+                        <textarea id="comentario" placeholder="Escribe tu mensaje..." required></textarea>
+                        <button type="submit" class="btn">Enviar</button>
+                        <a href="muro.html" class="btn" style="margin-top:1rem;font-size:1.1rem;">Ver mural de
+                            comentarios</a>
+                    </form>
+                    <div id="comentarios"></div>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -140,7 +139,7 @@
         <p>© 2025 Peña Insolentes</p>
     </footer>
 
-  <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>

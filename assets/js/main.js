@@ -37,11 +37,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
 // Galería carrusel
 document.addEventListener('DOMContentLoaded', () => {
   const galeriaImgs = document.querySelectorAll('.galeria-carrusel .galeria-img');
   const galeriaBtns = document.querySelectorAll('.galeria-btn');
+  const carrusel = document.querySelector('.galeria-carrusel');
   let idx = 0;
+  let startX = 0;
+  let isDragging = false;
+  let moved = false;
+
   function actualizarCarrusel() {
     galeriaImgs.forEach((img, i) => {
       img.classList.remove('carrusel-activa', 'carrusel-left', 'carrusel-right');
@@ -57,12 +63,69 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.classList.toggle('active', i === idx);
     });
   }
+
+  // Botones
   galeriaBtns.forEach((btn, i) => {
     btn.addEventListener('click', () => {
       idx = i;
       actualizarCarrusel();
     });
   });
+
+  // Touch events
+  if (carrusel) {
+    carrusel.addEventListener('touchstart', (e) => {
+      if (e.touches.length === 1) {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+        moved = false;
+      }
+    });
+    carrusel.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      const deltaX = e.touches[0].clientX - startX;
+      if (Math.abs(deltaX) > 40) {
+        moved = true;
+        if (deltaX < 0) {
+          idx = (idx + 1) % galeriaImgs.length;
+        } else {
+          idx = (idx - 1 + galeriaImgs.length) % galeriaImgs.length;
+        }
+        actualizarCarrusel();
+        isDragging = false;
+      }
+    });
+    carrusel.addEventListener('touchend', () => {
+      isDragging = false;
+    });
+
+    // Mouse drag events
+    carrusel.addEventListener('mousedown', (e) => {
+      startX = e.clientX;
+      isDragging = true;
+      moved = false;
+    });
+    carrusel.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      const deltaX = e.clientX - startX;
+      if (Math.abs(deltaX) > 40) {
+        moved = true;
+        if (deltaX < 0) {
+          idx = (idx + 1) % galeriaImgs.length;
+        } else {
+          idx = (idx - 1 + galeriaImgs.length) % galeriaImgs.length;
+        }
+        actualizarCarrusel();
+        isDragging = false;
+      }
+    });
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+    });
+    // Evita seleccionar imágenes al arrastrar
+    carrusel.addEventListener('dragstart', (e) => e.preventDefault());
+  }
+
   actualizarCarrusel();
 });
 
@@ -122,19 +185,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// Ruleta
-const retos = [
-  "Bebe un chupito",
-  "Cuenta una anécdota graciosa",
-  "Reto de baile durante 30 segundos",
-  "Di 'yo nunca' y los demás beben si lo hicieron",
-  "Haz una imitación de otro miembro"
-];
-
-function girarRuleta() {
-  const random = Math.floor(Math.random() * retos.length);
-  document.getElementById("resultado").innerText = retos[random];
-}
 
 // Comentarios (solo en memoria, ejemplo sin backend)
 const form = document.getElementById("form-comentario");
