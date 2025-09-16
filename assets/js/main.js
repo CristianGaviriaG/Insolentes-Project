@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Miembros (ejemplo)
 const miembros = [
-  { nombre: "Default 1", img: "https://randomuser.me/api/portraits/men/1.jpg" },
+  { nombre: "Default 1", img: "assets/img/miembros/nerea.png" },
   { nombre: "Default 2", img: "https://randomuser.me/api/portraits/women/2.jpg" },
   { nombre: "Default 3", img: "https://randomuser.me/api/portraits/men/3.jpg" },
   { nombre: "Default 4", img: "https://randomuser.me/api/portraits/women/4.jpg" },
@@ -156,9 +156,12 @@ const miembros = [
   { nombre: "Default 6", img: "https://randomuser.me/api/portraits/women/6.jpg" },
   { nombre: "Default 7", img: "https://randomuser.me/api/portraits/men/7.jpg" },
   { nombre: "Default 8", img: "https://randomuser.me/api/portraits/women/8.jpg" },
+  { nombre: "Default 8", img: "https://randomuser.me/api/portraits/women/8.jpg" },
+  { nombre: "Default 8", img: "https://randomuser.me/api/portraits/women/8.jpg" },
+  { nombre: "Default 8", img: "https://randomuser.me/api/portraits/women/8.jpg" },
 ];
 
-function mostrarMiembrosAleatorios(num = 5) {
+function mostrarMiembrosAleatorios(num = 7) {
   const contenedor = document.querySelector('.miembros-scroll');
   if (!contenedor) return;
   // Mezclar array
@@ -168,7 +171,9 @@ function mostrarMiembrosAleatorios(num = 5) {
     const card = document.createElement('div');
     card.className = 'miembro-card';
     card.innerHTML = `
-      <img src="${m.img}" alt="${m.nombre}">
+      <div class="img-container">
+        <img src="${m.img}" alt="${m.nombre}">
+      </div>
       <div class="nombre">${m.nombre}</div>
     `;
     contenedor.appendChild(card);
