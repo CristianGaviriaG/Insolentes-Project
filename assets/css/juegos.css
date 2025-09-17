@@ -1,0 +1,187 @@
+/* ========== JUEGOS - HERO Y GRID ========== */
+.juegos-hero {
+  text-align: center;
+  padding: 2.5rem 1rem 3rem 1rem;
+  margin: 3rem 0 2rem 0;
+  background: #181818;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px #ff35e481;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.juegos-hero h1 {
+  font-size: 2.5rem;
+  color: #ff35e4;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-shadow: 0 2px 8px #ff35e433;
+}
+.juegos-hero p {
+  font-size: 1.3rem;
+  color: #fff;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* ========== GRID DE JUEGOS ========== */
+.juegos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto 3rem auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+.juego-card {
+  background: #181818;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px #000a;
+  padding: 2rem 1.5rem 2rem 1.5rem;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 2px solid transparent;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 300px;
+}
+.juego-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px #ff35e433;
+  border: 2px solid #ff35e4;
+}
+.juego-card.soon {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.juego-card.soon:hover {
+  transform: none;
+  box-shadow: 0 2px 12px #000a;
+  border: 2px solid transparent;
+}
+.juego-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 15px;
+  margin-bottom: 1.5rem;
+  object-fit: cover;
+}
+.juego-card h2 {
+  color: #ff35e4;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+.juego-card p {
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+.btn-juego {
+  background: linear-gradient(135deg, #ff35e4, #e91e63);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 0.8rem 1.8rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 2px 8px #ff35e433;
+}
+.btn-juego:hover {
+  background: linear-gradient(135deg, #e91e63, #ff35e4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px #ff35e466;
+}
+.btn-juego.disabled {
+  background: #444;
+  color: #888;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ========== RESPONSIVE JUEGOS ========== */
+@media (max-width: 900px) {
+  .juegos-grid {
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 0 1rem;
+  }
+  .juego-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 1.5rem 1rem;
+  }
+}
+@media (max-width: 700px) {
+  .juegos-hero {
+    padding: 1.5rem 1rem 2rem 1rem;
+    margin: 1rem 1rem 1.5rem 1rem;
+    max-width: calc(100vw - 2rem);
+  }
+  .juegos-hero h1 {
+    font-size: 1.8rem;
+  }
+  .juegos-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 1rem;
+    max-width: calc(100vw - 2rem);
+  }
+  .juego-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 1.5rem 1rem;
+    margin: 0;
+  }
+  .juego-card img {
+    width: 80px;
+    height: 80px;
+  }
+  .btn-juego {
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
+  }
+}
+
+/* ========== MÓVILES MUY PEQUEÑOS ========== */
+@media (max-width: 480px) {
+  .juegos-hero {
+    margin: 0.5rem;
+    padding: 1rem;
+    max-width: calc(100vw - 1rem);
+  }
+  .juegos-hero h1 {
+    font-size: 1.5rem;
+  }
+  .juegos-grid {
+    gap: 0.8rem;
+    padding: 0 0.5rem;
+    max-width: calc(100vw - 1rem);
+  }
+  .juego-card {
+    padding: 1rem 0.8rem;
+  }
+  .juego-card img {
+    width: 60px;
+    height: 60px;
+  }
+  .btn-juego {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+}

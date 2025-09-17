@@ -1,0 +1,82 @@
+/* ========== HORÓSCOPO ICONOS ========== */
+.horoscopo-signos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 2.2rem 2.2rem;
+  justify-items: center;
+  margin: 1.5rem auto 2rem auto;
+  max-width: 700px;
+}
+.horoscopo-signo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2a2a2a 60%, #181818 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.7rem;
+  color: #fff;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: border 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 12px #ff35e433;
+  user-select: none;
+  padding: 0.2rem 0.1rem 0.1rem 0.1rem;
+  text-align: center;
+}
+.horoscopo-signo.selected,
+.horoscopo-signo:hover {
+  border: 3px solid #ff35e4;
+  transform: scale(1.12) rotate(-2deg);
+  box-shadow: 0 8px 32px #ff35e499, 0 0 0 4px #ff35e4cc;
+  background: linear-gradient(135deg, #181818 0%, #ff35e4 100%);
+}
+.horoscopo-signo-label {
+  font-size: 1.15rem;
+  margin-top: 0.22rem;
+  color: #fff;
+  text-shadow: 0 1px 4px #000a;
+  letter-spacing: 0.01em;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ========== RESPONSIVE HORÓSCOPO ========== */
+@media (max-width: 900px) {
+  .horoscopo-signos {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem 1.5rem;
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+  .horoscopo-signo {
+    width: 110px;
+    height: 110px;
+    font-size: 2rem;
+  }
+  .horoscopo-signo-label {
+    font-size: 0.95rem;
+    margin-top: 0.16rem;
+  }
+}
+@media (max-width: 700px) {
+  .horoscopo-signos {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem 0.8rem;
+    max-width: 100%;
+    margin: 1rem auto 1.5rem auto;
+    padding: 0 1rem;
+  }
+  .horoscopo-signo {
+    width: 75px;
+    height: 75px;
+    font-size: 1.5rem;
+    padding: 0.1rem 0.1rem 0.1rem 0.1rem;
+  }
+  .horoscopo-signo-label {
+    font-size: 0.75rem;
+    margin-top: 0.08rem;
+  }
+}

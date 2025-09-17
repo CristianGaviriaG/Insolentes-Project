@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juegos | Peña Insolentes</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/ruleta.css">
+    <link rel="stylesheet" href="assets/css/juegos.css">
+    <link rel="stylesheet" href="assets/css/modales.css">
+    <link rel="stylesheet" href="assets/css/horoscopo.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/img/pistolas.svg" alt="Logo Peña Insolentes">
+            </a>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="index.html#miembros">Miembros</a></li>
+                <li><a href="index.html#galeria">Galería</a></li>
+                <li><a href="juegos.html" class="active">Juegos</a></li>
+                <li><a href="index.html#muro">Muro</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+        <section class="juegos-hero">
+            <h1>¡Bienvenido a la Zona de Juegos!</h1>
+            <p>¿Te atreves a poner a prueba tu suerte y habilidad? Elige un juego y desafía a tus amigos.</p>
+        </section>
+
+        <section class="juegos-grid">
+            <div class="juego-card">
+                <img src="assets/img/juegos/ruleta.png" alt="Ruleta de Retos">
+                <h2>Ruleta de Retos</h2>
+                <p>Gira la ruleta y acepta el reto que te toque. ¿Serás capaz de cumplirlo?</p>
+                <a href="#" class="btn-juego" id="abrir-ruleta">Jugar</a>
+            </div>
+
+            <div class="juego-card">
+                <img src="assets/img/juegos/yonunca.png" alt="Yo Nunca">
+                <h2>Yo Nunca</h2>
+                <p>¿Te atreves a confesar? Pulsa para descubrir frases atrevidas y divertidas.</p>
+                <a href="#" class="btn-juego" id="abrir-yonunca">Jugar</a>
+            </div>
+
+            <div class="juego-card">
+                <img src="assets/img/juegos/verdadoreto.png" alt="Verdad o Reto">
+                <h2>Verdad o Reto</h2>
+                <p>Elige: ¿te atreves con la verdad o prefieres un reto insolente?</p>
+                <a href="#" class="btn-juego" id="abrir-voreto">Jugar</a>
+            </div>
+
+            <div class="juego-card">
+                <img src="assets/img/juegos/horoscopo.png" alt="Horóscopo Fiestero">
+                <h2>Horóscopo Fiestero</h2>
+                <p>Descubre tu destino fiestero según tu signo. ¡Predicciones solo para insolentes!</p>
+                <a href="#" class="btn-juego" id="abrir-horoscopo">Ver mi destino</a>
+            </div>
+
+            <div class="juego-card soon">
+                <img src="assets/img/juegos/memoria.png" alt="Juego de Memoria">
+                <h2>Memoria Insolente</h2>
+                <p>Próximamente: Pon a prueba tu memoria con las caras de la peña.</p>
+                <span class="btn-juego disabled">Próximamente</span>
+            </div>
+
+        </section>
+
+        <!-- Modales para juegos -->
+        <div id="modal-ruleta" class="modal-juego">
+            <div class="modal-juego-content">
+                <span class="modal-juego-close">&times;</span>
+                <h2>Ruleta de Retos</h2>
+                <div class="ruleta-container">
+                    <div class="container">
+                        <canvas id="wheel"></canvas>
+                        <button id="spin-btn" class="btn-juego">Girar</button>
+                        <div class="ruleta-flecha">
+                            <svg width="80" height="80" viewBox="0 0 80 80" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="40,8 68,40 40,32 12,40" fill="#FFD600" stroke="#B8860B"
+                                    stroke-width="3" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div id="final-value" class="ruleta-resultado">
+                    <p>Click en Girar para empezar</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-yonunca" class="modal-juego">
+            <div class="modal-juego-content">
+                <span class="modal-juego-close">&times;</span>
+                <h2>Yo Nunca</h2>
+                <div class="yonunca-container">
+                    <div id="yonunca-frase" class="juego-frase">Pulsa para empezar</div>
+                    <button id="yonunca-siguiente" class="btn-juego">Siguiente</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-voreto" class="modal-juego">
+            <div class="modal-juego-content">
+                <span class="modal-juego-close">&times;</span>
+                <h2>Verdad o Reto</h2>
+                <div class="voreto-container">
+                    <button id="btn-verdad" class="btn-juego">Verdad</button>
+                    <button id="btn-reto" class="btn-juego">Reto</button>
+                    <div id="voreto-frase" class="juego-frase"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-horoscopo" class="modal-juego">
+            <div class="modal-juego-content">
+                <span class="modal-juego-close">&times;</span>
+                <h2>Horóscopo Fiestero</h2>
+                <div class="horoscopo-container">
+                    <div class="horoscopo-signos" id="horoscopo-signos">
+                        <div class="horoscopo-signo" data-signo="aries" title="Aries">♈<span
+                                class="horoscopo-signo-label">Aries</span></div>
+                        <div class="horoscopo-signo" data-signo="tauro" title="Tauro">♉<span
+                                class="horoscopo-signo-label">Tauro</span></div>
+                        <div class="horoscopo-signo" data-signo="geminis" title="Géminis">♊<span
+                                class="horoscopo-signo-label">Géminis</span></div>
+                        <div class="horoscopo-signo" data-signo="cancer" title="Cáncer">♋<span
+                                class="horoscopo-signo-label">Cáncer</span></div>
+                        <div class="horoscopo-signo" data-signo="leo" title="Leo">♌<span
+                                class="horoscopo-signo-label">Leo</span></div>
+                        <div class="horoscopo-signo" data-signo="virgo" title="Virgo">♍<span
+                                class="horoscopo-signo-label">Virgo</span></div>
+                        <div class="horoscopo-signo" data-signo="libra" title="Libra">♎<span
+                                class="horoscopo-signo-label">Libra</span></div>
+                        <div class="horoscopo-signo" data-signo="escorpio" title="Escorpio">♏<span
+                                class="horoscopo-signo-label">Escorpio</span></div>
+                        <div class="horoscopo-signo" data-signo="sagitario" title="Sagitario">♐<span
+                                class="horoscopo-signo-label">Sagitario</span></div>
+                        <div class="horoscopo-signo" data-signo="capricornio" title="Capricornio">♑<span
+                                class="horoscopo-signo-label">Capricornio</span></div>
+                        <div class="horoscopo-signo" data-signo="acuario" title="Acuario">♒<span
+                                class="horoscopo-signo-label">Acuario</span></div>
+                        <div class="horoscopo-signo" data-signo="piscis" title="Piscis">♓<span
+                                class="horoscopo-signo-label">Piscis</span></div>
+                    </div>
+                    <button id="btn-horoscopo" class="btn-juego">Ver mi destino</button>
+                    <div id="horoscopo-frase" class="juego-frase"></div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <p>Designed by CristianGaviria</p>
+        <p>© 2025 Peña Insolentes</p>
+    </footer>
+    <script src="assets/js/juegos.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
