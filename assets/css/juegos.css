@@ -2,13 +2,11 @@
 .juegos-hero {
   text-align: center;
   padding: 2.5rem 1rem 3rem 1rem;
-  margin: 3rem 0 2rem 0;
+  margin: 1rem auto 2rem auto;
   background: #181818;
   border-radius: 18px;
   box-shadow: 0 2px 12px #ff35e481;
   max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
 }
 .juegos-hero h1 {
   font-size: 2.5rem;

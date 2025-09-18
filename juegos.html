@@ -6,32 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juegos | Peña Insolentes</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/ruleta.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
     <link rel="stylesheet" href="assets/css/juegos.css">
     <link rel="stylesheet" href="assets/css/modales.css">
     <link rel="stylesheet" href="assets/css/horoscopo.css">
+    <link rel="stylesheet" href="assets/css/ruleta.css">
 </head>
 
 <body>
+        <!-- Navbar clásico -->
     <header class="navbar">
         <div class="logo">
             <a href="index.html">
                 <img src="assets/img/pistolas.svg" alt="Logo Peña Insolentes">
             </a>
         </div>
+
         <button class="hamburger" id="hamburger" aria-label="Abrir menú">
             <span></span>
             <span></span>
             <span></span>
         </button>
+
         <nav id="nav-menu">
             <ul>
-                <li><a href="index.html#inicio">Inicio</a></li>
-                <li><a href="index.html#miembros">Miembros</a></li>
-                <li><a href="index.html#galeria">Galería</a></li>
-                <li><a href="juegos.html" class="active">Juegos</a></li>
-                <li><a href="index.html#muro">Muro</a></li>
-                <li><a href="index.html#contacto">Contacto</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="miembros.html">Miembros</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="juegos.html">Juegos</a></li>
+                <li><a href="muro.html">Muro</a></li>
             </ul>
         </nav>
     </header>
@@ -39,43 +42,36 @@
 
         <section class="juegos-hero">
             <h1>¡Bienvenido a la Zona de Juegos!</h1>
-            <p>¿Te atreves a poner a prueba tu suerte y habilidad? Elige un juego y desafía a tus amigos.</p>
+            <p>Porque en san mateo no todo es beber y bailar (aunque casi), hemos preparado un rincón especial con juegos para animar la fiesta. ¡Prepárate para reír, brindar y competir para ser el mejor de tu peña!</p>
         </section>
 
         <section class="juegos-grid">
             <div class="juego-card">
-                <img src="assets/img/juegos/ruleta.png" alt="Ruleta de Retos">
+                <img src="assets/img/icons/ruleta.png" alt="Ruleta de Retos">
                 <h2>Ruleta de Retos</h2>
                 <p>Gira la ruleta y acepta el reto que te toque. ¿Serás capaz de cumplirlo?</p>
                 <a href="#" class="btn-juego" id="abrir-ruleta">Jugar</a>
             </div>
 
             <div class="juego-card">
-                <img src="assets/img/juegos/yonunca.png" alt="Yo Nunca">
-                <h2>Yo Nunca</h2>
-                <p>¿Te atreves a confesar? Pulsa para descubrir frases atrevidas y divertidas.</p>
+                <img src="assets/img/icons/yo_nunca_1.png" alt="Yo Nunca">
+                <h2>Yo Nunca +18!</h2>
+                <p>¿Te atreves a confesar? Pulsa para descubrir frases atrevidas,picantes y divertidas.</p>
                 <a href="#" class="btn-juego" id="abrir-yonunca">Jugar</a>
             </div>
 
             <div class="juego-card">
-                <img src="assets/img/juegos/verdadoreto.png" alt="Verdad o Reto">
+                <img src="assets/img/icons/true_challenge.png" alt="Verdad o Reto">
                 <h2>Verdad o Reto</h2>
                 <p>Elige: ¿te atreves con la verdad o prefieres un reto insolente?</p>
                 <a href="#" class="btn-juego" id="abrir-voreto">Jugar</a>
             </div>
 
             <div class="juego-card">
-                <img src="assets/img/juegos/horoscopo.png" alt="Horóscopo Fiestero">
+                <img src="assets/img/icons/horoscope.png" alt="Horóscopo Fiestero">
                 <h2>Horóscopo Fiestero</h2>
                 <p>Descubre tu destino fiestero según tu signo. ¡Predicciones solo para insolentes!</p>
                 <a href="#" class="btn-juego" id="abrir-horoscopo">Ver mi destino</a>
-            </div>
-
-            <div class="juego-card soon">
-                <img src="assets/img/juegos/memoria.png" alt="Juego de Memoria">
-                <h2>Memoria Insolente</h2>
-                <p>Próximamente: Pon a prueba tu memoria con las caras de la peña.</p>
-                <span class="btn-juego disabled">Próximamente</span>
             </div>
 
         </section>
@@ -169,6 +165,7 @@
         <p>Designed by CristianGaviria</p>
         <p>© 2025 Peña Insolentes</p>
     </footer>
+    <script src="assets/js/navbar.js"></script>
     <script src="assets/js/juegos.js"></script>
     <script src="assets/js/main.js"></script>
 </body>

@@ -10,16 +10,16 @@
   pointer-events: none;
 }
 
-* {
+/* Estilos SOLO para modal de ruleta */
+#modal-ruleta * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
 
-body {
-  height: 100vh;
-  background: linear-gradient(135deg, #141414, #080808);
+#modal-ruleta {
+  background: linear-gradient(135deg, #141414, #080808) !important;
 }
 
 .wrapper {

@@ -129,30 +129,13 @@ document.addEventListener('DOMContentLoaded', () => {
   actualizarCarrusel();
 });
 
-// Navbar responsive
-document.addEventListener("DOMContentLoaded", function() {
-  const hamburger = document.getElementById("hamburger");
-  const navMenu = document.querySelector(".navbar ul");
-  hamburger.addEventListener("click", function() {
-    navMenu.classList.toggle("active");
-    hamburger.classList.toggle("open");
-  });
-  // Opcional: cerrar menú al hacer clic en un enlace
-  navMenu.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      navMenu.classList.remove("active");
-      hamburger.classList.remove("open");
-    });
-  });
-});
-
 // Miembros (ejemplo)
 const miembros = [
-  { nombre: "Default 1", img: "assets/img/miembros/nerea.png" },
-  { nombre: "Default 2", img: "https://randomuser.me/api/portraits/women/2.jpg" },
-  { nombre: "Default 3", img: "https://randomuser.me/api/portraits/men/3.jpg" },
-  { nombre: "Default 4", img: "https://randomuser.me/api/portraits/women/4.jpg" },
-  { nombre: "Default 5", img: "https://randomuser.me/api/portraits/men/5.jpg" },
+  { nombre: "Nerea", img: "assets/img/miembros/nerea.png" },
+  { nombre: "Lidia", img: "assets/img/miembros/lidia.png" },
+  { nombre: "Sara", img: "assets/img/miembros/sara_lo.png" },
+  { nombre: "Lorena", img: "assets/img/miembros/lorena.png" },
+  { nombre: "Marta", img: "assets/img/miembros/marta.png" },
   { nombre: "Default 6", img: "https://randomuser.me/api/portraits/women/6.jpg" },
   { nombre: "Default 7", img: "https://randomuser.me/api/portraits/men/7.jpg" },
   { nombre: "Default 8", img: "https://randomuser.me/api/portraits/women/8.jpg" },
