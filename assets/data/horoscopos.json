@@ -1,0 +1,156 @@
+{
+  "horoscopos": {
+    "aries": [
+      "Hoy tu vaso nunca estará vacío",
+      "¡Cuidado con los brindis dobles, Aries!",
+      "Tu energía conquistará todas las pistas de baile",
+      "Hoy serás el alma de la fiesta",
+      "Tu valentía te llevará a intentar ese karaoke",
+      "Hoy tu misión es abrir la primera ronda. Si no lo haces tú, no empieza la fiesta",
+      "Tu impulsividad te hará proponer el after más loco de la historia",
+      "Serás el primero en subirse a la mesa, pero también el primero en caerse",
+      "Tu grito de guerra será escuchado desde tres calles de distancia",
+      "Hoy lideras la conga más épica que la peña haya visto jamás"
+    ],
+    "tauro": [
+      "La resaca no te vencerá esta vez",
+      "Hoy bailas sí o sí, Tauro!",
+      "Tu resistencia será legendaria",
+      "Disfrutarás cada momento sin prisa",
+      "Tu paciencia será recompensada con diversión",
+      "Encontrarás un bocata olvidado que te salvará a las 4:00 am",
+      "Tu estómago de hierro resistirá cualquier combinado extraño que te propongan",
+      "Serás el último en pie cuando todos los demás ya estén zombies",
+      "Tu lema de hoy: 'Despacio pero seguro... hacia la barra'",
+      "Descubrirás que tu sofá es el lugar más cómodo del universo a las 6 am"
+    ],
+    "geminis": [
+      "Doble personalidad, doble ronda",
+      "Hoy te toca organizar el próximo plan",
+      "Serás el centro de todas las conversaciones",
+      "Tu ingenio brillará en todos los juegos",
+      "Cambiarás de opinión sobre tu bebida favorita",
+      "Tus pasos de baile crearán un nuevo himno peñista. O un meme eterno",
+      "Mantendrás tres conversaciones diferentes al mismo tiempo y todas serán épicas",
+      "Tu habilidad para hacer amigos nuevos multiplicará el grupo por dos",
+      "Inventarás un juego nuevo que se convertirá en tradición peñista",
+      "Cambiarás de tema de conversación 47 veces, pero todos te seguirán el rollo"
+    ],
+    "cancer": [
+      "Tus emociones estarán a flor de piel... ¡y será genial!",
+      "Hoy abrazarás a todo el mundo",
+      "Tu lado protector cuidará de la peña",
+      "Los recuerdos de hoy serán especiales",
+      "Tu intuición te guiará a la mejor diversión",
+      "Tu playlist dominará la noche, pero ojo: alguien intentará colarte \"Paquito el Chocolatero\" 10 veces",
+      "Serás el confidente oficial de todos los dramas de la noche",
+      "Tu instinto maternal aparecerá: repartirás agua y consejos a partes iguales",
+      "Llorarás de risa al menos 5 veces y de emoción otras 3",
+      "Tu hombro será el más solicitado para apoyo moral y físico"
+    ],
+    "leo": [
+      "Serás la estrella de todas las fotos",
+      "Tu carisma iluminará toda la noche",
+      "Hoy todos querrán imitarte",
+      "Tu risa será contagiosa",
+      "Brillarás más que las luces de la discoteca",
+      "Serás el centro de todos los brindis. Consejo: protege tu vaso, porque hoy no te dejarán ni una gota",
+      "Tu entrada triunfal será recordada durante años",
+      "Protagonizarás el momento más viral de la noche",
+      "Tu ego crecerá tanto como tus ganas de fiesta",
+      "Serás trending topic en el grupo de WhatsApp durante una semana"
+    ],
+    "virgo": [
+      "Planificarás la diversión perfecta",
+      "Tu organización salvará la noche",
+      "Serás quien recuerde dónde dejaron las llaves",
+      "Tu practicidad hará todo más divertido",
+      "Encontrarás el equilibrio perfecto entre fiesta y responsabilidad",
+      "Dormirás en el sofá… pero mágicamente despertarás justo para el chupito colectivo",
+      "Llevarás toallitas húmedas y serás el héroe silencioso de la noche",
+      "Tu agenda mental recordará cada anécdota para contarla mañana",
+      "Organizarás el transporte de vuelta cuando nadie más puede ni hablar",
+      "Tu mochila mágica contendrá todo lo que la peña necesite en cada momento"
+    ],
+    "libra": [
+      "Serás el mediador de todos los juegos",
+      "Tu diplomacia unirá a toda la peña",
+      "Encontrarás la armonía en el caos festivo",
+      "Tu buen gusto elegirá la mejor música",
+      "Equilibrarás diversión y elegancia",
+      "Hoy equilibrarás las rondas: nadie se quedará sin copa. Resultado: todos te deben una",
+      "Tu sentido de la justicia repartirá los chupitos con equidad matemática",
+      "Serás el árbitro oficial de todos los juegos de beber",
+      "Tu búsqueda de armonía creará el ambiente perfecto para la fiesta",
+      "Encontrarás el punto medio perfecto entre 'un poco más' y 'ya es suficiente'"
+    ],
+    "escorpio": [
+      "Tu intensidad marcará el ritmo de la noche",
+      "Serás quien proponga los juegos más atrevidos",
+      "Tu magnetismo atraerá todas las miradas",
+      "Los secretos mejor guardados saldrán a la luz",
+      "Tu pasión por la diversión será contagiosa",
+      "Un simple chupito puede acabar en confesión épica. Piénsatelo antes de brindar",
+      "Tu mirada penetrante descubrirá quién está fingiendo estar borracho",
+      "Serás el detector de mentiras humano de la peña",
+      "Tu intensidad convertirá cualquier conversación en confesionario",
+      "Provocarás el momento más dramático y memorable de la noche"
+    ],
+    "sagitario": [
+      "Tu aventura comenzará antes de salir de casa",
+      "Serás quien proponga el lugar más loco",
+      "Tu optimismo levantará el ánimo de todos",
+      "Explorarás nuevos límites de la diversión",
+      "Tu filosofía de vida: ¡diversión sin límites!",
+      "Tu vaso se recargará solo. Los astros dicen: milagro peñista en camino",
+      "Tu espíritu aventurero llevará a la peña a lugares inexplorados",
+      "Descubrirás un bar secreto que nadie conocía",
+      "Tu risa se escuchará desde el otro extremo de la ciudad",
+      "Convertirás cualquier plan aburrido en la aventura del siglo"
+    ],
+    "capricornio": [
+      "Tu determinación te llevará al último baile",
+      "Serás quien aguante más tiempo despierto",
+      "Tu resistencia será envidiable",
+      "Construirás los mejores recuerdos paso a paso",
+      "Tu perseverancia convertirá la noche en épica",
+      "Serás el héroe del grupo con tu poder para revivir al colega caído. Llévate limón",
+      "Tu mentalidad de 'trabajo duro, fiesta dura' será tu mantra",
+      "Establecerás nuevos récords de resistencia peñista",
+      "Tu estrategia para la noche será meticulosa y efectiva",
+      "Serás el último soldado en pie cuando el resto se rinda"
+    ],
+    "acuario": [
+      "Tu originalidad sorprenderá a todos",
+      "Serás quien proponga el plan más innovador",
+      "Tu excentricidad será el toque especial",
+      "Romperás todos los esquemas tradicionales",
+      "Tu visión única hará todo más interesante",
+      "Abrirás una botella que mojará a media peña. Nadie se enfadará… demasiado",
+      "Inventarás una forma revolucionaria de mezclar bebidas",
+      "Tu rareza será exactamente lo que la noche necesitaba",
+      "Cambiarás las reglas de todos los juegos y serán mejores",
+      "Tu perspectiva única transformará lo ordinario en extraordinario"
+    ],
+    "piscis": [
+      "Tu imaginación creará los momentos más mágicos",
+      "Serás el poeta de la noche",
+      "Tu sensibilidad captará cada emoción",
+      "Los momentos más emotivos vendrán de ti",
+      "Tu creatividad inspirará a toda la peña",
+      "Inventarás un nuevo combinado legendario. Problema: nadie recordará la receta mañana",
+      "Tu lado artístico convertirá la fiesta en performance",
+      "Serás el intérprete oficial de todos los sentimientos confusos de la noche",
+      "Tu intuición te llevará exactamente donde necesitas estar en cada momento",
+      "Crearás las anécdotas más surrealistas que la peña contará durante años"
+    ]
+  },
+  "meta": {
+    "version": "3.0",
+    "lastUpdated": "2025-09-18",
+    "description": "Horóscopos fiesteros para cada signo zodiacal - Versión extendida con máxima variedad",
+    "totalFrases": 120,
+    "frasesPerSigno": 10,
+    "probabilidadRepeticion": "Prácticamente imposible en sesiones normales"
+  }
+}

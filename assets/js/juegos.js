@@ -1,32 +1,76 @@
 // Juegos Peña Insolentes - lógica de modales y juegos
 
-document.addEventListener('DOMContentLoaded', () => {
-  // --- Arrays de ejemplo ---
-  const retosRuleta = [
-    "Haz un brindis rimado",
-    "Bebe con la mano izquierda",
-    "Canta el himno de la peña",
-    "Haz una foto grupal con pose insolente"
-  ];
-  const frasesYoNunca = [
-    "Yo nunca he perdido mi vaso en San Mateo",
-    "Yo nunca he bailado encima de una mesa",
-    "Yo nunca he hecho un brindis inventado"
-  ];
-  const verdades = [
-    "¿Cuál es tu recuerdo más loco de la peña?",
-    "¿A quién retarías a un duelo de chupitos?"
-  ];
-  const retos = [
-    "Haz una ronda de chistes malos",
-    "Imita a otro miembro de la peña durante 1 minuto"
-  ];
-  const horoscopos = {
-    aries: ["Hoy tu vaso nunca estará vacío", "¡Cuidado con los brindis dobles, Aries!"] ,
-    tauro: ["La resaca no te vencerá esta vez", "Hoy bailas sí o sí, Tauro!"],
-    geminis: ["Doble personalidad, doble ronda", "Hoy te toca organizar el próximo plan"],
-    // ...rellena el resto
-  };
+document.addEventListener('DOMContentLoaded', async () => {
+  // --- Carga de datos desde archivos JSON ---
+  let retosRuleta = [];
+  let frasesYoNunca = [];
+  let verdades = [];
+  let retos = [];
+  let horoscopos = {};
+
+  // Función para cargar datos JSON
+  async function cargarDatosJSON(archivo, fallback = []) {
+    try {
+      const response = await fetch(`assets/data/${archivo}`);
+      if (!response.ok) throw new Error(`Error ${response.status}: ${response.statusText}`);
+      const data = await response.json();
+      console.log(`✅ Cargado: ${archivo}`);
+      return data;
+    } catch (error) {
+      console.warn(`⚠️ Error cargando ${archivo}:`, error.message);
+      console.log(`📦 Usando datos de fallback para ${archivo}`);
+      return fallback;
+    }
+  }
+
+  // Cargar todos los datos al inicio
+  try {
+    const [
+      datosRetosRuleta,
+      datosFrasesYoNunca,
+      datosVerdades,
+      datosRetos,
+      datosHoroscopos
+    ] = await Promise.all([
+      cargarDatosJSON('retos-ruleta.json', {
+        retos: ["Haz un brindis rimado", "Bebe con la mano izquierda", "Canta el himno de la peña"]
+      }),
+      cargarDatosJSON('frases-yonunca.json', {
+        frases: ["Yo nunca he perdido mi vaso en San Mateo", "Yo nunca he bailado encima de una mesa"]
+      }),
+      cargarDatosJSON('verdades.json', {
+        verdades: ["¿Cuál es tu recuerdo más loco de la peña?", "¿A quién retarías a un duelo de chupitos?"]
+      }),
+      cargarDatosJSON('retos.json', {
+        retos: ["Haz una ronda de chistes malos", "Imita a otro miembro de la peña durante 1 minuto"]
+      }),
+      cargarDatosJSON('horoscopos.json', {
+        horoscopos: {
+          aries: ["Hoy tu vaso nunca estará vacío", "¡Cuidado con los brindis dobles, Aries!"],
+          tauro: ["La resaca no te vencerá esta vez", "Hoy bailas sí o sí, Tauro!"],
+          geminis: ["Doble personalidad, doble ronda", "Hoy te toca organizar el próximo plan"]
+        }
+      })
+    ]);
+
+    // Asignar datos cargados
+    retosRuleta = datosRetosRuleta.retos || datosRetosRuleta;
+    frasesYoNunca = datosFrasesYoNunca.frases || datosFrasesYoNunca;
+    verdades = datosVerdades.verdades || datosVerdades;
+    retos = datosRetos.retos || datosRetos;
+    horoscopos = datosHoroscopos.horoscopos || datosHoroscopos;
+
+    console.log(`🎮 Datos de juegos cargados:`, {
+      retosRuleta: retosRuleta.length,
+      frasesYoNunca: frasesYoNunca.length,
+      verdades: verdades.length,
+      retos: retos.length,
+      horoscopos: Object.keys(horoscopos).length
+    });
+
+  } catch (error) {
+    console.error('❌ Error crítico cargando datos de juegos:', error);
+  }
 
   // --- Utilidades modales ---
   function abrirModal(id) {
