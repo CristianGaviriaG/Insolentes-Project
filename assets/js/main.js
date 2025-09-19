@@ -19,23 +19,25 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalImg = document.getElementById('galeria-modal-img');
   const cerrar = document.querySelector('.galeria-modal-cerrar');
   const carruselImgs = document.querySelectorAll('.galeria-carrusel .galeria-img');
-  carruselImgs.forEach(img => {
-    img.addEventListener('click', () => {
-      modal.style.display = 'flex';
-      modalImg.src = img.src;
-      modalImg.alt = img.alt;
+  if (modal && modalImg && cerrar && carruselImgs.length > 0) {
+    carruselImgs.forEach(img => {
+      img.addEventListener('click', () => {
+        modal.style.display = 'flex';
+        modalImg.src = img.src;
+        modalImg.alt = img.alt;
+      });
     });
-  });
-  cerrar.addEventListener('click', () => {
-    modal.style.display = 'none';
-    modalImg.src = '';
-  });
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
+    cerrar.addEventListener('click', () => {
       modal.style.display = 'none';
       modalImg.src = '';
-    }
-  });
+    });
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+        modalImg.src = '';
+      }
+    });
+  }
 });
 
 // Galería carrusel
@@ -174,19 +176,31 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// Comentarios (solo en memoria, ejemplo sin backend)
-const form = document.getElementById("form-comentario");
-const comentariosDiv = document.getElementById("comentarios");
+// Comentarios usando Netlify Functions (solo envío en index)
+const formComentarioMain = document.getElementById("form-comentario");
+const NETLIFY_BASE = "https://insolentes-project.netlify.app";
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const nombre = document.getElementById("nombre").value || "Anónimo";
-  const texto = document.getElementById("comentario").value;
-  if (texto.trim() === "") return;
+async function enviarComentario(nombre, texto) {
+  try {
+    const response = await fetch(`${NETLIFY_BASE}/.netlify/functions/addComentario`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ nombre, texto }),
+    });
+    if (!response.ok) throw new Error("Error al enviar comentario");
+  } catch (error) {
+    console.error(error);
+    alert("Hubo un problema al enviar tu comentario. Inténtalo de nuevo.");
+  }
+}
 
-  const comentario = document.createElement("p");
-  comentario.innerHTML = `<strong>${nombre}:</strong> ${texto}`;
-  comentariosDiv.prepend(comentario);
-
-  form.reset();
-});
+if (formComentarioMain) {
+  formComentarioMain.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const nombre = document.getElementById("nombre").value || "Anónimo";
+    const texto = document.getElementById("comentario").value;
+    if (texto.trim() === "") return;
+    await enviarComentario(nombre, texto);
+    formComentarioMain.reset();
+  });
+}
