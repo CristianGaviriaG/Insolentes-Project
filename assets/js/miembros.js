@@ -7,7 +7,7 @@ const miembros = [
   { nombre: "Marta", img: "assets/img/miembros/marta.png" },
   { nombre: "Alba", img: "assets/img/miembros/alba.png" },
   { nombre: "Sara", img: "assets/img/miembros/sarab.png" },
-  { nombre: "Default 8", img: "https://randomuser.me/api/portraits/women/8.jpg" },
+  { nombre: "Adri", img: "assets/img/miembros/adriana.png" },
   { nombre: "Default 8", img: "https://randomuser.me/api/portraits/women/9.jpg" },
   { nombre: "Default 8", img: "https://randomuser.me/api/portraits/women/10.jpg" },
   { nombre: "Default 8", img: "https://randomuser.me/api/portraits/women/11.jpg" },
