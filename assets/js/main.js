@@ -178,29 +178,109 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Comentarios usando Netlify Functions (solo envío en index)
 const formComentarioMain = document.getElementById("form-comentario");
+const btnEnviar = document.getElementById("btn-enviar");
+const feedbackDiv = document.getElementById("muro-feedback");
 const NETLIFY_BASE = "https://insolentes-project.netlify.app";
+
+let isSubmitting = false; // Flag para prevenir envíos múltiples
+
+// Función para mostrar mensajes de feedback
+function mostrarFeedback(mensaje, tipo = 'info', duracion = 4000) {
+  if (!feedbackDiv) return;
+  
+  feedbackDiv.textContent = mensaje;
+  feedbackDiv.className = `muro-feedback ${tipo} show`;
+  
+  // Auto-ocultar después de la duración especificada
+  setTimeout(() => {
+    feedbackDiv.className = 'muro-feedback';
+  }, duracion);
+}
+
+// Función para cambiar estado del botón
+function cambiarEstadoBoton(loading = false, texto = 'Enviar') {
+  if (!btnEnviar) return;
+  
+  btnEnviar.disabled = loading;
+  btnEnviar.className = `btn ${loading ? 'loading' : ''}`;
+  
+  if (!loading) {
+    btnEnviar.textContent = texto;
+  }
+}
 
 async function enviarComentario(nombre, texto) {
   try {
+    // Detectar si estamos en desarrollo local
+    const isLocal = window.location.hostname === 'localhost' || 
+                   window.location.hostname === '127.0.0.1' || 
+                   window.location.hostname.includes('file://');
+    
+    if (isLocal) {
+      // Simular delay en desarrollo local
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      mostrarFeedback('✅ Comentario enviado con éxito (modo desarrollo)', 'success');
+      return;
+    }
+
     const response = await fetch(`${NETLIFY_BASE}/.netlify/functions/addComentario`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ nombre, texto }),
     });
-    if (!response.ok) throw new Error("Error al enviar comentario");
+    
+    if (!response.ok) {
+      throw new Error(`Error del servidor: ${response.status}`);
+    }
+    
+    mostrarFeedback('✅ ¡Comentario enviado con éxito! Aparecerá en el mural en unos momentos.', 'success', 5000);
+    
   } catch (error) {
-    console.error(error);
-    alert("Hubo un problema al enviar tu comentario. Inténtalo de nuevo.");
+    console.error('Error al enviar comentario:', error);
+    mostrarFeedback('❌ Error al enviar el comentario. Por favor, inténtalo de nuevo.', 'error', 6000);
+    throw error;
   }
 }
 
 if (formComentarioMain) {
   formComentarioMain.addEventListener("submit", async (e) => {
     e.preventDefault();
-    const nombre = document.getElementById("nombre").value || "Anónimo";
-    const texto = document.getElementById("comentario").value;
-    if (texto.trim() === "") return;
-    await enviarComentario(nombre, texto);
-    formComentarioMain.reset();
+    
+    // Prevenir envíos múltiples
+    if (isSubmitting) {
+      mostrarFeedback('⏳ Ya hay un envío en proceso, por favor espera...', 'info', 3000);
+      return;
+    }
+    
+    const nombre = document.getElementById("nombre").value.trim() || "Anónimo";
+    const texto = document.getElementById("comentario").value.trim();
+    
+    // Validaciones
+    if (texto === "") {
+      mostrarFeedback('⚠️ Por favor, escribe un mensaje antes de enviar.', 'error', 3000);
+      return;
+    }
+    
+    if (texto.length > 500) {
+      mostrarFeedback('⚠️ El mensaje es demasiado largo. Máximo 500 caracteres.', 'error', 4000);
+      return;
+    }
+    
+    // Iniciar proceso de envío
+    isSubmitting = true;
+    cambiarEstadoBoton(true);
+    mostrarFeedback('📤 Enviando comentario...', 'info');
+    
+    try {
+      await enviarComentario(nombre, texto);
+      // Reset del formulario solo si el envío fue exitoso
+      formComentarioMain.reset();
+    } catch (error) {
+      // El error ya se maneja en enviarComentario()
+    } finally {
+      // Restaurar estado del botón
+      isSubmitting = false;
+      cambiarEstadoBoton(false);
+    }
   });
 }
