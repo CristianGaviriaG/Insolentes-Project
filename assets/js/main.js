@@ -141,9 +141,9 @@ const miembros = [
   { nombre: "Alba", img: "assets/img/miembros/alba.png" },
   { nombre: "Sara", img: "assets/img/miembros/sarab.png" },
   { nombre: "Adri", img: "assets/img/miembros/adriana.png" },
-  { nombre: "Default 8", img: "https://randomuser.me/api/portraits/women/8.jpg" },
-  { nombre: "Default 8", img: "https://randomuser.me/api/portraits/women/8.jpg" },
-  { nombre: "Default 8", img: "https://randomuser.me/api/portraits/women/8.jpg" },
+  { nombre: "Mario", img: "assets/img/miembros/mario.png" },
+  { nombre: "Hector", img: "assets/img/miembros/hector.png" },
+  { nombre: "Asier", img: "assets/img/miembros/asier.png" },
 ];
 
 function mostrarMiembrosAleatorios(num = 5) {
